@@ -21,6 +21,8 @@
 		85ECEC7023D4CFA2000B0CE4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */; };
 		85ECEC7223D4CFD0000B0CE4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */; };
 		85ECEC7323D4CFD0000B0CE4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */; };
+		85ECEC7A23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */; };
+		85ECEC7B23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		85ECEC7823D4D6D0000B0CE4 /* National Parks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "National Parks.entitlements"; sourceTree = "<group>"; };
+		85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,7 @@
 				85ECEC6B23D4CF7C000B0CE4 /* AllParksView.swift */,
 				85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */,
 				85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */,
+				85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +295,7 @@
 			files = (
 				85ECEC7223D4CFD0000B0CE4 /* SignupView.swift in Sources */,
 				85ECEC3C23D4CB08000B0CE4 /* AppDelegate.swift in Sources */,
+				85ECEC7A23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */,
 				85ECEC3E23D4CB08000B0CE4 /* SceneDelegate.swift in Sources */,
 				85ECEC6F23D4CFA2000B0CE4 /* ProfileView.swift in Sources */,
 				85ECEC6C23D4CF7C000B0CE4 /* AllParksView.swift in Sources */,
@@ -311,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85ECEC7323D4CFD0000B0CE4 /* SignupView.swift in Sources */,
+				85ECEC7B23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */,
 				85ECEC6D23D4CF7C000B0CE4 /* AllParksView.swift in Sources */,
 				85ECEC7023D4CFA2000B0CE4 /* ProfileView.swift in Sources */,
 				85ECEC5E23D4CB0C000B0CE4 /* National_ParksUITests.swift in Sources */,
