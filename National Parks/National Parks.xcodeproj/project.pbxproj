@@ -15,6 +15,12 @@
 		85ECEC4823D4CB0B000B0CE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85ECEC4623D4CB0B000B0CE4 /* LaunchScreen.storyboard */; };
 		85ECEC5323D4CB0C000B0CE4 /* National_ParksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC5223D4CB0C000B0CE4 /* National_ParksTests.swift */; };
 		85ECEC5E23D4CB0C000B0CE4 /* National_ParksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC5D23D4CB0C000B0CE4 /* National_ParksUITests.swift */; };
+		85ECEC6C23D4CF7C000B0CE4 /* AllParksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC6B23D4CF7C000B0CE4 /* AllParksView.swift */; };
+		85ECEC6D23D4CF7C000B0CE4 /* AllParksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC6B23D4CF7C000B0CE4 /* AllParksView.swift */; };
+		85ECEC6F23D4CFA2000B0CE4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */; };
+		85ECEC7023D4CFA2000B0CE4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */; };
+		85ECEC7223D4CFD0000B0CE4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */; };
+		85ECEC7323D4CFD0000B0CE4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,10 @@
 		85ECEC5923D4CB0C000B0CE4 /* National ParksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "National ParksUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85ECEC5D23D4CB0C000B0CE4 /* National_ParksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = National_ParksUITests.swift; sourceTree = "<group>"; };
 		85ECEC5F23D4CB0C000B0CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85ECEC6B23D4CF7C000B0CE4 /* AllParksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllParksView.swift; sourceTree = "<group>"; };
+		85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		85ECEC7823D4D6D0000B0CE4 /* National Parks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "National Parks.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +109,11 @@
 		85ECEC3A23D4CB08000B0CE4 /* National Parks */ = {
 			isa = PBXGroup;
 			children = (
+				85ECEC7823D4D6D0000B0CE4 /* National Parks.entitlements */,
 				85ECEC3B23D4CB08000B0CE4 /* AppDelegate.swift */,
 				85ECEC3D23D4CB08000B0CE4 /* SceneDelegate.swift */,
 				85ECEC3F23D4CB08000B0CE4 /* ContentView.swift */,
+				85ECEC7723D4CFF3000B0CE4 /* Views */,
 				85ECEC4123D4CB0B000B0CE4 /* Assets.xcassets */,
 				85ECEC4623D4CB0B000B0CE4 /* LaunchScreen.storyboard */,
 				85ECEC4923D4CB0C000B0CE4 /* Info.plist */,
@@ -134,6 +146,16 @@
 				85ECEC5F23D4CB0C000B0CE4 /* Info.plist */,
 			);
 			path = "National ParksUITests";
+			sourceTree = "<group>";
+		};
+		85ECEC7723D4CFF3000B0CE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85ECEC6B23D4CF7C000B0CE4 /* AllParksView.swift */,
+				85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */,
+				85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85ECEC7223D4CFD0000B0CE4 /* SignupView.swift in Sources */,
 				85ECEC3C23D4CB08000B0CE4 /* AppDelegate.swift in Sources */,
 				85ECEC3E23D4CB08000B0CE4 /* SceneDelegate.swift in Sources */,
+				85ECEC6F23D4CFA2000B0CE4 /* ProfileView.swift in Sources */,
+				85ECEC6C23D4CF7C000B0CE4 /* AllParksView.swift in Sources */,
 				85ECEC4023D4CB08000B0CE4 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85ECEC7323D4CFD0000B0CE4 /* SignupView.swift in Sources */,
+				85ECEC6D23D4CF7C000B0CE4 /* AllParksView.swift in Sources */,
+				85ECEC7023D4CFA2000B0CE4 /* ProfileView.swift in Sources */,
 				85ECEC5E23D4CB0C000B0CE4 /* National_ParksUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "National Parks/National Parks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"National Parks/Preview Content\"";
 				DEVELOPMENT_TEAM = 3VAGH3GY35;
@@ -454,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "National Parks/National Parks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"National Parks/Preview Content\"";
 				DEVELOPMENT_TEAM = 3VAGH3GY35;
