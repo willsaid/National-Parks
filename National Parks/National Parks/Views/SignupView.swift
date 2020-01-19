@@ -11,15 +11,12 @@ import SwiftUI
 
 struct SignupView: View {
     
-    var auth: AuthType
-    
-    enum AuthType {
-        case signin, signup
-    }
+    var authType: AuthType
     
     @State private var showingAuthSwitch = false
     @State private var username = String()
     @State private var password = String()
+    @State private var error = false
     
     var body: some View {
         VStack {
@@ -27,6 +24,9 @@ struct SignupView: View {
             self.titleView
             Spacer()
             VStack {
+                if error {
+                    self.errorText
+                }
                 self.usernameField
                 self.passwordField
                 self.signinButton
@@ -39,11 +39,17 @@ struct SignupView: View {
             .edgesIgnoringSafeArea(.all))
     }
     
+    var errorText: some View {
+        Text("Try Again")
+            .modifier(AuthTextField())
+            .foregroundColor(Color.red)
+    }
+    
     var signinButton: some View {
         Button(action: {
-            // Register or Login
+            self.registerOrLogin()
         }) {
-            (self.auth == .signup ?
+            (self.authType == .signup ?
                 Text("Sign Up").bold() : Text("Sign In").bold())
                 .frame(maxWidth: .infinity)
         }
@@ -53,11 +59,13 @@ struct SignupView: View {
     var usernameField: some View {
         TextField("Username", text: $username)
             .modifier(AuthTextField())
+            .textContentType(.username)
     }
     
     var passwordField: some View {
-        TextField("Password", text: $password)
+        SecureField("Password", text: $password)
             .modifier(AuthTextField())
+            .textContentType(.password)
     }
     
     var titleView: some View {
@@ -71,21 +79,37 @@ struct SignupView: View {
         Button(action: {
             self.showingAuthSwitch.toggle()
         }) {
-            self.auth == .signup ?
+            self.authType == .signup ?
                 Text("Already have an account?") :
                 Text("Register a new account")
-        }.sheet(isPresented: $showingAuthSwitch) {
-            self.auth == .signup ?
-                SignupView(auth: .signin) :
-                SignupView(auth: .signup)
+        }
+        .sheet(isPresented: $showingAuthSwitch) {
+            self.authType == .signup ?
+                SignupView(authType: .signin) :
+                SignupView(authType: .signup)
         }
         .foregroundColor(Color.white)
         .padding()
+    }
+    
+    func registerOrLogin() {
+        Auth(type: self.authType,
+             username: self.username,
+             password: self.password).authenticate()
+        { (success, error) in
+            if success {
+                self.error = false
+// "going to have to make a parent struct, with a passed down variable, and up to this point itll be set to AuthScreen, and here ill change the binding to be equal to AllParks, and the view will switch.")
+            } else {
+                print(error ?? "Unknown Error")
+                self.error = true
+            }
+        }
     }
 }
 
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView(auth: .signup)
+        SignupView(authType: .signup)
     }
 }

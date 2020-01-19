@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8532887D23D5085700AD0541 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */; };
+		8532887F23D50A8600AD0541 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532887E23D50A8600AD0541 /* InitialView.swift */; };
 		85ECEC3C23D4CB08000B0CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC3B23D4CB08000B0CE4 /* AppDelegate.swift */; };
 		85ECEC3E23D4CB08000B0CE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC3D23D4CB08000B0CE4 /* SceneDelegate.swift */; };
 		85ECEC4023D4CB08000B0CE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC3F23D4CB08000B0CE4 /* ContentView.swift */; };
@@ -23,6 +25,12 @@
 		85ECEC7323D4CFD0000B0CE4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */; };
 		85ECEC7A23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */; };
 		85ECEC7B23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */; };
+		85ECEC7E23D4EC39000B0CE4 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7D23D4EC39000B0CE4 /* Auth.swift */; };
+		85ECEC8023D4EC3D000B0CE4 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC7D23D4EC39000B0CE4 /* Auth.swift */; };
+		85ECEC8223D4ECE9000B0CE4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC8123D4ECE9000B0CE4 /* Endpoint.swift */; };
+		85ECEC8323D4ECE9000B0CE4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC8123D4ECE9000B0CE4 /* Endpoint.swift */; };
+		85ECEC8523D4EE43000B0CE4 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC8423D4EE43000B0CE4 /* Request.swift */; };
+		85ECEC8623D4EE43000B0CE4 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC8423D4EE43000B0CE4 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8532887E23D50A8600AD0541 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		85ECEC3823D4CB08000B0CE4 /* National Parks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "National Parks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85ECEC3B23D4CB08000B0CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85ECEC3D23D4CB08000B0CE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +71,9 @@
 		85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		85ECEC7823D4D6D0000B0CE4 /* National Parks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "National Parks.entitlements"; sourceTree = "<group>"; };
 		85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		85ECEC7D23D4EC39000B0CE4 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		85ECEC8123D4ECE9000B0CE4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		85ECEC8423D4EE43000B0CE4 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,7 @@
 				85ECEC3B23D4CB08000B0CE4 /* AppDelegate.swift */,
 				85ECEC3D23D4CB08000B0CE4 /* SceneDelegate.swift */,
 				85ECEC3F23D4CB08000B0CE4 /* ContentView.swift */,
+				85ECEC7C23D4EC2C000B0CE4 /* Model */,
 				85ECEC7723D4CFF3000B0CE4 /* Views */,
 				85ECEC4123D4CB0B000B0CE4 /* Assets.xcassets */,
 				85ECEC4623D4CB0B000B0CE4 /* LaunchScreen.storyboard */,
@@ -155,11 +168,22 @@
 			isa = PBXGroup;
 			children = (
 				85ECEC6B23D4CF7C000B0CE4 /* AllParksView.swift */,
+				8532887E23D50A8600AD0541 /* InitialView.swift */,
 				85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */,
 				85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */,
 				85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		85ECEC7C23D4EC2C000B0CE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85ECEC7D23D4EC39000B0CE4 /* Auth.swift */,
+				85ECEC8123D4ECE9000B0CE4 /* Endpoint.swift */,
+				85ECEC8423D4EE43000B0CE4 /* Request.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8532887F23D50A8600AD0541 /* InitialView.swift in Sources */,
 				85ECEC7223D4CFD0000B0CE4 /* SignupView.swift in Sources */,
 				85ECEC3C23D4CB08000B0CE4 /* AppDelegate.swift in Sources */,
 				85ECEC7A23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */,
@@ -300,6 +325,9 @@
 				85ECEC6F23D4CFA2000B0CE4 /* ProfileView.swift in Sources */,
 				85ECEC6C23D4CF7C000B0CE4 /* AllParksView.swift in Sources */,
 				85ECEC4023D4CB08000B0CE4 /* ContentView.swift in Sources */,
+				85ECEC8223D4ECE9000B0CE4 /* Endpoint.swift in Sources */,
+				85ECEC7E23D4EC39000B0CE4 /* Auth.swift in Sources */,
+				85ECEC8523D4EE43000B0CE4 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8532887D23D5085700AD0541 /* SignupView.swift in Sources */,
+				85ECEC8623D4EE43000B0CE4 /* Request.swift in Sources */,
 				85ECEC5323D4CB0C000B0CE4 /* National_ParksTests.swift in Sources */,
+				85ECEC8023D4EC3D000B0CE4 /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +350,7 @@
 				85ECEC7B23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */,
 				85ECEC6D23D4CF7C000B0CE4 /* AllParksView.swift in Sources */,
 				85ECEC7023D4CFA2000B0CE4 /* ProfileView.swift in Sources */,
+				85ECEC8323D4ECE9000B0CE4 /* Endpoint.swift in Sources */,
 				85ECEC5E23D4CB0C000B0CE4 /* National_ParksUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
