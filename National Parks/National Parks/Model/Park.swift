@@ -9,12 +9,11 @@
 import Foundation
 import MapKit
 
-
 struct Park: Codable {
     
     let _id: String
     let description: String
-    let favCount: Int
+    var favCount: Int
     let image: String // image url
     let lat: Double
     let lon: Double
@@ -48,10 +47,32 @@ struct Park: Codable {
         }
     }
     
+    var isFavorited: Bool {
+        isCurrentlyFavorited ?? wasFavoritedByUser()
+    }
     
+    /// In this session
+    var isCurrentlyFavorited: Bool? = nil
+    
+    /// In database
+    private func wasFavoritedByUser() -> Bool {
+        return false // todo
+    }
+    
+    mutating func favorite() {
+        self.favCount += 1
+        self.isCurrentlyFavorited = true
+        // todo
+    }
+    
+    mutating func unfavorite() {
+        self.favCount -= 1
+        self.isCurrentlyFavorited = false
+        // todo
+    }
 }
 
-extension Park: Identifiable {
+extension Park: Identifiable, Hashable {
     var id: String {
         _id
     }

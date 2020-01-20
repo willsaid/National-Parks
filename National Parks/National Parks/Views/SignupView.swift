@@ -33,9 +33,9 @@ struct SignupView: View {
             self.switchAuthButton
         }
             .background(Image("signup-background")
-            .resizable()
-            .scaledToFill()
-            .edgesIgnoringSafeArea(.all))
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all))
     }
     
     var errorText: some View {
@@ -98,6 +98,7 @@ struct SignupView: View {
         { (success, error) in
             if success {
                 self.error = false
+                self.showingAuthSwitch = false
             } else {
                 print(error ?? "Unknown Error")
                 self.error = true

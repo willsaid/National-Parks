@@ -10,13 +10,25 @@ import SwiftUI
 
 struct InitialView: View {
     @ObservedObject var auth = Auth.shared
+    let manager = ParksManager()
     
     var body: some View {
        ZStack {
             if auth.token == nil {
                 SignupView(authType: .signup)
             } else {
-                AllParksView(manager: ParksManager())
+//                TabView {
+                    AllParksView(manager: manager)
+                        .tabItem {
+                            Image(systemName: "list.dash")
+                            Text("All Parks")
+                        }.tag(0)
+//                    ProfileView(manager: ParksManager())
+//                        .tabItem {
+//                            Image(systemName: "person")
+//                            Text("My Parks")
+//                        }.tag(1)
+//                }
             }
         }
     }

@@ -12,6 +12,7 @@
 		8581419023D519BE0084D777 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8581418F23D519BE0084D777 /* Park.swift */; };
 		8581419223D52B970084D777 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8581419123D52B970084D777 /* LocationManager.swift */; };
 		85AB249323D547A000025E5E /* ParksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB249223D547A000025E5E /* ParksManager.swift */; };
+		85AB249723D55A4400025E5E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB249623D55A4400025E5E /* DetailView.swift */; };
 		85ECEC3C23D4CB08000B0CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC3B23D4CB08000B0CE4 /* AppDelegate.swift */; };
 		85ECEC3E23D4CB08000B0CE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECEC3D23D4CB08000B0CE4 /* SceneDelegate.swift */; };
 		85ECEC4223D4CB0B000B0CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85ECEC4123D4CB0B000B0CE4 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		8581418F23D519BE0084D777 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		8581419123D52B970084D777 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		85AB249223D547A000025E5E /* ParksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParksManager.swift; sourceTree = "<group>"; };
+		85AB249623D55A4400025E5E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		85ECEC3823D4CB08000B0CE4 /* National Parks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "National Parks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85ECEC3B23D4CB08000B0CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85ECEC3D23D4CB08000B0CE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				85ECEC6B23D4CF7C000B0CE4 /* AllParksView.swift */,
 				8532887E23D50A8600AD0541 /* InitialView.swift */,
+				85AB249623D55A4400025E5E /* DetailView.swift */,
 				85ECEC6E23D4CFA2000B0CE4 /* ProfileView.swift */,
 				8581418D23D519A00084D777 /* ParkRowView.swift */,
 				85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */,
@@ -205,6 +208,7 @@
 				85ECEC3E23D4CB08000B0CE4 /* SceneDelegate.swift in Sources */,
 				85ECEC6F23D4CFA2000B0CE4 /* ProfileView.swift in Sources */,
 				8581419023D519BE0084D777 /* Park.swift in Sources */,
+				85AB249723D55A4400025E5E /* DetailView.swift in Sources */,
 				85ECEC6C23D4CF7C000B0CE4 /* AllParksView.swift in Sources */,
 				8581419223D52B970084D777 /* LocationManager.swift in Sources */,
 				85ECEC8223D4ECE9000B0CE4 /* Endpoint.swift in Sources */,
