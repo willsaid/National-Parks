@@ -15,17 +15,43 @@ class ParksManager: ObservableObject {
     @Published var allParks: [(park: Park, imageView: Image?)] = []
     
     // Indices of images ive already started fetching
-    var alreadyFetched = Set<Int>()
-
+    private var alreadyFetched = Set<Int>()
+    
+    /// Loaded from db upon launching app
+    private var alreadyFavoritedParks = Set<Park>()
+    
     func fetch() {
         LocationManager.authorizeAndInitialize()
-        Park.fetch { (parks) in
-            DispatchQueue.main.async {
-                print(parks[0])
-                self.allParks = parks
-                    .sorted(by: { $0.milesAway < $1.milesAway })
-                    .map { ($0, nil)}
+        fetchMyFavorites {
+            Park.fetch { (parks) in
+                DispatchQueue.main.async {
+                    self.allParks = parks
+                        .sorted(by: { $0.milesAway < $1.milesAway })
+                        .map { ($0, nil)}
+                    for index in 0..<self.allParks.count {
+                        self.allParks[index].park.isFavorited
+                            = self.alreadyFavoritedParks.contains(self.allParks[index].park)
+                    }
+                }
             }
+        }
+    }
+    
+    private func fetchMyFavorites(completion: @escaping () -> Void) {
+        Request.fetch(url: .user,
+                      httpMethod: .GET,
+                      body: nil,
+                      authorization: Auth.shared.token)
+        { (json, error) in
+            if let json = json,
+                let favorites = json["wishlist"] as? [[String: Any]],
+                let parks = Park.parks(fromJSON: favorites)
+            {
+                self.alreadyFavoritedParks = Set<Park>(parks)
+            } else {
+                print("Failed to fetch my wishlist parks!", error ?? "")
+            }
+            completion()
         }
     }
     

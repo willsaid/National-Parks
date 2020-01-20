@@ -31,7 +31,7 @@ struct AllParksView: View {
         NavigationView {
             List(0..<manager.allParks.count, id: \.self) { index in
                 if self.filter == .All ||
-                    self.manager.allParks[index].park.isFavorited {
+                    self.manager.allParks[index].park.isFavorited ?? false {
                     ParkRowView(manager: self.manager,
                             index: index)
                     .onAppear {

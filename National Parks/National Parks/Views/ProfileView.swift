@@ -15,7 +15,7 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             List(0..<manager.allParks.count, id: \.self) { index in
-                if self.manager.allParks[index].park.isFavorited {
+                if self.manager.allParks[index].park.isFavorited ?? false {
                     ParkRowView(manager: self.manager,
                             index: index)
                     .onAppear {

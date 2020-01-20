@@ -53,7 +53,8 @@ struct ParkRowView: View {
                 image!
                     .renderingMode(.original)
                     .resizable()
-                    .frame(width: 100)
+                    .scaledToFill()
+                    .frame(maxWidth: 100)
             } else {
                 EmptyView()
                     .frame(width: 100, height: 100)
@@ -63,13 +64,13 @@ struct ParkRowView: View {
     
     func favoriteButton() -> some View {
         Button(action: {
-            if self.park.isFavorited {
+            if (self.park.isFavorited ?? false) {
                 self.manager.allParks[self.index].park.unfavorite()
             } else {
                 self.manager.allParks[self.index].park.favorite()
             }
         }) {
-            self.park.isFavorited ?
+            (self.park.isFavorited ?? false) ?
                 Image(systemName: "star.fill") :
                 Image(systemName: "star")
         }

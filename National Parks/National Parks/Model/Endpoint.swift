@@ -17,4 +17,7 @@ struct Endpoint {
     static let registration = Endpoint(url: base.url + "/rest/register")
     static let login        = Endpoint(url: base.url + "/rest/login")
     static let allParks     = Endpoint(url: base.url + "/rest/allparks")
+    static let user         = Endpoint(url: base.url + "/rest/user")
+    static let favorite     = Endpoint(url: base.url + "/rest/favorite")
+    static let unfavorite   = Endpoint(url: base.url + "/rest/unfavorite")
 }

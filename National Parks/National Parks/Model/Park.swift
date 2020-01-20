@@ -34,12 +34,8 @@ struct Park: Codable {
         { (json, error) in
             if let json = json, let parksJson = json["parks"] as? [[String: Any]]
             {
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: parksJson, options: .prettyPrinted)
-                    let parks = try JSONDecoder().decode([Park].self, from: data)
+                if let parks = Self.parks(fromJSON: parksJson) {
                     completion(parks)
-                } catch {
-                    print(error)
                 }
             } else {
                 print("Error fetching parks", error ?? "")
@@ -47,28 +43,43 @@ struct Park: Codable {
         }
     }
     
-    var isFavorited: Bool {
-        isCurrentlyFavorited ?? wasFavoritedByUser()
+    static func parks(fromJSON parksJson: [[String: Any]]) -> [Park]? {
+        do {
+            let data = try JSONSerialization.data(withJSONObject: parksJson, options: .prettyPrinted)
+            let parks = try JSONDecoder().decode([Park].self, from: data)
+            return parks
+        } catch {
+            print(error)
+            return nil
+        }
     }
     
-    /// In this session
-    var isCurrentlyFavorited: Bool? = nil
-    
-    /// In database
-    private func wasFavoritedByUser() -> Bool {
-        return false // todo
-    }
+    var isFavorited: Bool? = nil
     
     mutating func favorite() {
         self.favCount += 1
-        self.isCurrentlyFavorited = true
-        // todo
+        self.isFavorited = true
+        Request.fetch(url: .favorite,
+                      httpMethod: .POST,
+                      body: ["park_id": self.id],
+                      authorization: Auth.shared.token) { (json, error) in
+            if let error = error {
+                print("error favoriting park", error)
+            }
+        }
     }
     
     mutating func unfavorite() {
         self.favCount -= 1
-        self.isCurrentlyFavorited = false
-        // todo
+        self.isFavorited = false
+        Request.fetch(url: .unfavorite,
+                      httpMethod: .POST,
+                      body: ["park_id": self.id],
+                      authorization: Auth.shared.token) { (json, error) in
+            if let error = error {
+                print("error un-favoriting park", error)
+            }
+        }
     }
 }
 
