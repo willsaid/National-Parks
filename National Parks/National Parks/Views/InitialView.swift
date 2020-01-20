@@ -16,7 +16,7 @@ struct InitialView: View {
             if auth.token == nil {
                 SignupView(authType: .signup)
             } else {
-                AllParksView()
+                AllParksView(manager: ParksManager())
             }
         }
     }

@@ -9,13 +9,22 @@
 import SwiftUI
 
 struct AllParksView: View {
+    
+    @ObservedObject var manager: ParksManager
+    
     var body: some View {
-        Text("All Parks View")
+        List(manager.allParks) { park in
+            ParkRowView(park: park)
+        }
+        .onAppear {
+            self.manager.fetch()
+        }
     }
+    
 }
 
 struct AllParksView_Previews: PreviewProvider {
     static var previews: some View {
-        AllParksView()
+        AllParksView(manager: ParksManager())
     }
 }

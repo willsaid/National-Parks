@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct SignupView: View {
-    
     var authType: AuthType
     
     @State private var showingAuthSwitch = false
@@ -99,7 +98,6 @@ struct SignupView: View {
         { (success, error) in
             if success {
                 self.error = false
-// "going to have to make a parent struct, with a passed down variable, and up to this point itll be set to AuthScreen, and here ill change the binding to be equal to AllParks, and the view will switch.")
             } else {
                 print(error ?? "Unknown Error")
                 self.error = true

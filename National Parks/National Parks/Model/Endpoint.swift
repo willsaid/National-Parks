@@ -13,6 +13,8 @@ struct Endpoint {
     var url: String
 
     private static let base = Endpoint(url: "https://powerful-wildwood-07865.herokuapp.com")
+    
     static let registration = Endpoint(url: base.url + "/rest/register")
     static let login        = Endpoint(url: base.url + "/rest/login")
+    static let allParks     = Endpoint(url: base.url + "/rest/allparks")
 }

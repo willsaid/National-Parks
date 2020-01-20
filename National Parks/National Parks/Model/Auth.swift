@@ -37,9 +37,9 @@ class Auth: ObservableObject {
     }
     
     func authenticate(completion: @escaping completion) {
-        Request.post(url: type == .signin ? .login : .registration,
+        Request.fetch(url: type == .signin ? .login : .registration,
                      httpMethod: .POST,
-                     parameters: [
+                     body: [
                         "username": self.username,
                         "password": self.password
                      ])
