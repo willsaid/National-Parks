@@ -6,18 +6,17 @@
 //  Copyright © 2020 Will Said. All rights reserved.
 //
 
-import Foundation
-import Combine
 import UIKit
 import SwiftUI
 
 class ParksManager: ObservableObject {
+    
     @Published var allParks: [(park: Park, imageView: Image?)] = []
     
     // Indices of images ive already started fetching
     private var alreadyFetched = Set<Int>()
     
-    /// Loaded from db upon launching app
+    /// Loaded from database upon launching app
     private var alreadyFavoritedParks = Set<Park>()
     
     func fetch() {
@@ -27,7 +26,7 @@ class ParksManager: ObservableObject {
                 DispatchQueue.main.async {
                     self.allParks = parks
                         .sorted(by: { $0.milesAway < $1.milesAway })
-                        .map { ($0, nil)}
+                        .map { ($0, nil) }
                     for index in 0..<self.allParks.count {
                         self.allParks[index].park.isFavorited
                             = self.alreadyFavoritedParks.contains(self.allParks[index].park)
@@ -58,8 +57,10 @@ class ParksManager: ObservableObject {
     func downloadImage(atIndex i: Int) {
         if self.alreadyFetched.contains(i) { return }
         self.alreadyFetched.insert(i)
+        for prevIndex in 0...i {
+            downloadImage(atIndex: prevIndex) // to account for missed rows
+        }
         let park = allParks[i].park
-        
         URLSession.shared.dataTask(with: URL(string: park.image)!) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error fetching image \(String(describing: error))")

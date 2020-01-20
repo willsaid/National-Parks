@@ -9,14 +9,17 @@
 import SwiftUI
 
 struct ParkRowView: View {
-    @ObservedObject var manager: ParksManager
+    
+    @ObservedObject
+    var manager: ParksManager
     var index: Int
-
+    
     @State private var showingDetail = false
     
     var park: Park {
         manager.allParks[index].park
     }
+    
     var image: Image? {
         manager.allParks[index].imageView
     }
@@ -25,7 +28,7 @@ struct ParkRowView: View {
         Button(action: {
             self.showingDetail.toggle()
         }) {
-            rowView
+            self.rowView
         }
         .sheet(isPresented: $showingDetail) {
             DetailView(park: self.park, image: self.image)
@@ -53,8 +56,8 @@ struct ParkRowView: View {
                 image!
                     .renderingMode(.original)
                     .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: 100)
+                    .scaledToFit()
+                    .frame(maxWidth: 100, maxHeight: 100)
             } else {
                 EmptyView()
                     .frame(width: 100, height: 100)

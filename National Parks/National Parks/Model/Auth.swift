@@ -16,23 +16,23 @@ enum AuthType {
 class Auth: ObservableObject {
     
     static var shared: Auth = {
-        let auth = Auth(type: .signup, username: "", password: "")
+        let auth = Auth(type: .signup,
+                        username: getUsername() ?? "",
+                        password: "")
         auth.token = getToken()
-        auth.username = getUsername() ?? ""
         return auth
     }()
     
     static func signout() {
         shared.token = nil
-        // this should trigger the initial view to be set to the SignUpView
+        // this triggers the initial view to be set to the SignUpView
     }
     
     @Published var token: String? = nil
     
     static let tokenKey = "token"
     static let nameKey = "username"
-    typealias completion = (_ success: Bool, _ error: String?) -> Void
-    
+        
     let type    : AuthType
     var username: String
     let password: String
@@ -43,7 +43,7 @@ class Auth: ObservableObject {
         self.password = password
     }
     
-    func authenticate(completion: @escaping completion) {
+    func authenticate(completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
         Request.fetch(url: type == .signin ? .login : .registration,
                      httpMethod: .POST,
                      body: [

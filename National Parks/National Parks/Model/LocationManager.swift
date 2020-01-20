@@ -10,7 +10,7 @@ import MapKit
 
 class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     
-    /// assumes user doesnt move very far while using the app.
+    /// assumes user doesnt move very far while using the app
     static var currentCoordinate: CLLocationCoordinate2D? {
         locationManager.location?.coordinate
     }
@@ -26,10 +26,10 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     
     static func miles(from coord1: CLLocationCoordinate2D, to coord2: CLLocationCoordinate2D) -> Double {
         let meters = CLLocation(latitude: coord1.latitude,
-                          longitude: coord1.longitude)
-                .distance(from: CLLocation(latitude: coord2.latitude,
-                                           longitude: coord2.longitude))
-        return meters / 1609.0
+                                longitude: coord1.longitude)
+                        .distance(from: CLLocation(latitude: coord2.latitude,
+                                                   longitude: coord2.longitude))
+        return meters / 1609.0 // meters -> miles
     }
     
 }

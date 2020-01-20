@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    
     var park: Park
     var image: Image?
     

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct InitialView: View {
+    
     @ObservedObject var auth = Auth.shared
     let manager = ParksManager()
     
@@ -17,18 +18,7 @@ struct InitialView: View {
             if auth.token == nil {
                 SignupView(authType: .signup)
             } else {
-//                TabView {
-                    AllParksView(manager: manager)
-                        .tabItem {
-                            Image(systemName: "list.dash")
-                            Text("All Parks")
-                        }.tag(0)
-//                    ProfileView(manager: ParksManager())
-//                        .tabItem {
-//                            Image(systemName: "person")
-//                            Text("My Parks")
-//                        }.tag(1)
-//                }
+                AllParksView(manager: manager)
             }
         }
     }

@@ -10,19 +10,9 @@ import SwiftUI
 
 struct AllParksView: View {
     
-    enum Filter: String {
-        case Favorites, All
-        
-        func opposite() -> Filter {
-            switch self {
-            case .All: return .Favorites
-            case.Favorites: return .All
-            }
-        }
-    }
-    
     @ObservedObject var manager: ParksManager
     @State private var filter: Filter = .All
+    
     var filterToggleText: String {
         "Show \(filter.opposite().rawValue)"
     }
@@ -31,7 +21,7 @@ struct AllParksView: View {
         NavigationView {
             List(0..<manager.allParks.count, id: \.self) { index in
                 if self.filter == .All ||
-                    self.manager.allParks[index].park.isFavorited ?? false {
+                    (self.manager.allParks[index].park.isFavorited ?? false) {
                     ParkRowView(manager: self.manager,
                             index: index)
                     .onAppear {

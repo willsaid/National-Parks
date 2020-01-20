@@ -11,17 +11,28 @@ import MapKit
 
 struct Park: Codable {
     
-    let _id: String
-    let description: String
-    var favCount: Int
-    let image: String // image url
-    let lat: Double
-    let lon: Double
-    let name: String
-    let state: String
+    /*
+     Instance variables must perfectly match
+     what's returned in the JSON
+     */
+    let _id         : String
+    let description : String
+    var favCount    : Int
+    let image       : String // image url
+    let lat         : Double
+    let lon         : Double
+    let name        : String
+    let state       : String
+    
+    /*
+     Additional vars added after initialization
+     */
+    var isFavorited: Bool? = nil
+
     
     var milesAway: Double {
-        guard let currentCoord = LocationManager.currentCoordinate else { return Double(Int.max) }
+        guard let currentCoord = LocationManager.currentCoordinate
+            else { return Double(Int.max) }
         let parkCoord = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         return LocationManager.miles(from: currentCoord, to: parkCoord)
     }
@@ -32,11 +43,11 @@ struct Park: Codable {
                       body: nil,
                       authorization: Auth.shared.token)
         { (json, error) in
-            if let json = json, let parksJson = json["parks"] as? [[String: Any]]
+            if let json = json,
+                let parksJson = json["parks"] as? [[String: Any]],
+                let parks = parks(fromJSON: parksJson)
             {
-                if let parks = Self.parks(fromJSON: parksJson) {
-                    completion(parks)
-                }
+                completion(parks)
             } else {
                 print("Error fetching parks", error ?? "")
             }
@@ -53,8 +64,6 @@ struct Park: Codable {
             return nil
         }
     }
-    
-    var isFavorited: Bool? = nil
     
     mutating func favorite() {
         self.favCount += 1

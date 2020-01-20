@@ -13,10 +13,15 @@ enum HTTPMethod: String {
 }
 
 struct Request {
-    static func fetch(url: Endpoint, httpMethod: HTTPMethod, body: [String: Any]?, authorization: String? = nil, completion: @escaping (_ json: [String: Any]?, _ error: String?) -> Void) {
+    static func fetch(url: Endpoint,
+                      httpMethod: HTTPMethod,
+                      body: [String: Any]?,
+                      authorization: String? = nil,
+                      type: String = "application/json",
+                      completion: @escaping (_ json: [String: Any]?, _ error: String?) -> Void) {
         var request = URLRequest(url: URL(string: url.url)!)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue(type, forHTTPHeaderField: "Content-Type")
+        request.setValue(type, forHTTPHeaderField: "Accept")
         request.setValue(authorization, forHTTPHeaderField: "Authorization")
         request.httpMethod = httpMethod.rawValue
         if let body = body {
@@ -39,6 +44,8 @@ struct Request {
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     completion(json, nil)
+                } else {
+                    completion(nil, "Error with JSON deserialization")
                 }
             } catch let error {
                 completion(nil, "Error with JSON deserialization: \(error.localizedDescription)")

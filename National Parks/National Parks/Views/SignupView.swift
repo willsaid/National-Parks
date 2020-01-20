@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct SignupView: View {
+    
     var authType: AuthType
     
     @State private var showingAuthSwitch = false
