@@ -1,19 +1,19 @@
 //
-//  AuthTextField.swift
+//  AuthError.swift
 //  National Parks
 //
-//  Created by Will Said on 1/19/20.
+//  Created by Michael Koohang on 1/21/20.
 //  Copyright © 2020 Will Said. All rights reserved.
 //
 
 import SwiftUI
 
-struct AuthTextField: ViewModifier {
+struct AuthError: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(Color.white)
             .padding()
-            .background(Color.gray.opacity(0.8))
+            .background(Color.red)
             .cornerRadius(10)
             .padding(.leading, 20)
             .padding(.trailing, 20)
