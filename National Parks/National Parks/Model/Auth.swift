@@ -25,6 +25,9 @@ class Auth: ObservableObject {
     
     static func signout() {
         shared.token = nil
+        shared.username = ""
+        UserDefaults.standard.removeObject(forKey: tokenKey)
+        UserDefaults.standard.removeObject(forKey: nameKey)
         // this triggers the initial view to be set to the SignUpView
     }
     

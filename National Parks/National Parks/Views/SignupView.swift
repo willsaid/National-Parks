@@ -11,9 +11,7 @@ import SwiftUI
 
 struct SignupView: View {
     
-    var authType: AuthType
-    
-    @State private var showingAuthSwitch = false
+    @Environment(\.presentationMode) var presentationMode
     @State private var username = String()
     @State private var password = String()
     @State private var error = false
@@ -40,66 +38,58 @@ struct SignupView: View {
     }
     
     var errorText: some View {
-        Text("Try Again")
-            .modifier(AuthTextField())
-            .foregroundColor(Color.red)
+        Text("Error: Please try again.")
+            .modifier(AuthError())
     }
     
     var signinButton: some View {
         Button(action: {
             self.registerOrLogin()
         }) {
-            (self.authType == .signup ?
-                Text("Sign Up").bold() : Text("Sign In").bold())
+            Text("Sign Up").bold()
                 .frame(maxWidth: .infinity)
         }
-        .modifier(AuthTextField())
+        .modifier(AuthButton())
     }
     
     var usernameField: some View {
         TextField("Username", text: $username)
             .modifier(AuthTextField())
             .textContentType(.username)
+            .autocapitalization(.none)
     }
     
     var passwordField: some View {
         SecureField("Password", text: $password)
             .modifier(AuthTextField())
             .textContentType(.password)
+            .autocapitalization(.none)
     }
     
     var titleView: some View {
         Text("My Parks")
             .font(.largeTitle)
             .bold()
-            .foregroundColor(Color.black)
+            .foregroundColor(Color.white)
     }
     
     var switchAuthButton: some View {
         Button(action: {
-            self.showingAuthSwitch.toggle()
+            self.presentationMode.wrappedValue.dismiss()
         }) {
-            self.authType == .signup ?
-                Text("Already have an account?") :
-                Text("Register a new account")
-        }
-        .sheet(isPresented: $showingAuthSwitch) {
-            self.authType == .signup ?
-                SignupView(authType: .signin) :
-                SignupView(authType: .signup)
+            Text("Already have an account?")
         }
         .foregroundColor(Color.white)
         .padding()
     }
     
     func registerOrLogin() {
-        Auth(type: self.authType,
+        Auth(type: .signup,
              username: self.username,
              password: self.password).authenticate()
         { (success, error) in
             if success {
                 self.error = false
-                self.showingAuthSwitch = false
             } else {
                 print(error ?? "Unknown Error")
                 self.error = true
@@ -110,6 +100,6 @@ struct SignupView: View {
 
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView(authType: .signup)
+        SignupView()
     }
 }

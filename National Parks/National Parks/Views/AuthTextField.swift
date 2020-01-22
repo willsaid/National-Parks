@@ -15,9 +15,6 @@ struct AuthTextField: ViewModifier {
             .padding()
             .background(Color.gray.opacity(0.8))
             .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 2))
             .padding(.leading, 20)
             .padding(.trailing, 20)
     }

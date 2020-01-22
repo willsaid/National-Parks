@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C65E22F23D78DBA00AE9C8D /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65E22E23D78DBA00AE9C8D /* SigninView.swift */; };
+		4C65E23123D7B51F00AE9C8D /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65E23023D7B51F00AE9C8D /* AuthButton.swift */; };
+		4C65E23323D7B59200AE9C8D /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65E23223D7B59200AE9C8D /* AuthError.swift */; };
 		8532887F23D50A8600AD0541 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532887E23D50A8600AD0541 /* InitialView.swift */; };
 		8570D14023D6474C0053AFD6 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8570D13F23D6474C0053AFD6 /* Filter.swift */; };
 		8581418E23D519A00084D777 /* ParkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8581418D23D519A00084D777 /* ParkRowView.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C65E22E23D78DBA00AE9C8D /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		4C65E23023D7B51F00AE9C8D /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		4C65E23223D7B59200AE9C8D /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		8532887E23D50A8600AD0541 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		8570D13F23D6474C0053AFD6 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		8581418D23D519A00084D777 /* ParkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkRowView.swift; sourceTree = "<group>"; };
@@ -110,7 +116,10 @@
 				85AB249623D55A4400025E5E /* DetailView.swift */,
 				8581418D23D519A00084D777 /* ParkRowView.swift */,
 				85ECEC7123D4CFD0000B0CE4 /* SignupView.swift */,
+				4C65E22E23D78DBA00AE9C8D /* SigninView.swift */,
 				85ECEC7923D4E9C8000B0CE4 /* AuthTextField.swift */,
+				4C65E23023D7B51F00AE9C8D /* AuthButton.swift */,
+				4C65E23223D7B59200AE9C8D /* AuthError.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,14 +215,17 @@
 				85ECEC3C23D4CB08000B0CE4 /* AppDelegate.swift in Sources */,
 				85ECEC7A23D4E9C8000B0CE4 /* AuthTextField.swift in Sources */,
 				85ECEC3E23D4CB08000B0CE4 /* SceneDelegate.swift in Sources */,
+				4C65E23323D7B59200AE9C8D /* AuthError.swift in Sources */,
 				8581419023D519BE0084D777 /* Park.swift in Sources */,
 				85AB249723D55A4400025E5E /* DetailView.swift in Sources */,
 				85ECEC6C23D4CF7C000B0CE4 /* AllParksView.swift in Sources */,
 				8581419223D52B970084D777 /* LocationManager.swift in Sources */,
 				85ECEC8223D4ECE9000B0CE4 /* Endpoint.swift in Sources */,
 				85ECEC7E23D4EC39000B0CE4 /* Auth.swift in Sources */,
+				4C65E23123D7B51F00AE9C8D /* AuthButton.swift in Sources */,
 				8570D14023D6474C0053AFD6 /* Filter.swift in Sources */,
 				85ECEC8523D4EE43000B0CE4 /* Request.swift in Sources */,
+				4C65E22F23D78DBA00AE9C8D /* SigninView.swift in Sources */,
 				85AB249323D547A000025E5E /* ParksManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = "National Parks/National Parks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"National Parks/Preview Content\"";
-				DEVELOPMENT_TEAM = 3VAGH3GY35;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "National Parks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,7 +375,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.willsaid.National-Parks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -374,7 +386,7 @@
 				CODE_SIGN_ENTITLEMENTS = "National Parks/National Parks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"National Parks/Preview Content\"";
-				DEVELOPMENT_TEAM = 3VAGH3GY35;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "National Parks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.willsaid.National-Parks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

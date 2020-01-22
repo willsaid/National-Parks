@@ -16,7 +16,7 @@ struct InitialView: View {
     var body: some View {
        ZStack {
             if auth.token == nil {
-                SignupView(authType: .signup)
+                SigninView()
             } else {
                 AllParksView(manager: manager)
             }
